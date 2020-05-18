@@ -1,8 +1,9 @@
 .movies {
-    color: orange;
+    color: darkolivegreen;
 }
 .movies h3 {
     text-align: center;
+    text-decoration: underline;
 }
 
 .movies li {
