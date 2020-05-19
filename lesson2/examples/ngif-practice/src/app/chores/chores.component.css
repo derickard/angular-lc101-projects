@@ -6,6 +6,18 @@
     color: #3c79b8;
 }
 
+.iceCream {
+    color: seagreen;
+}
+
+.iceCream p {
+    text-align: center;
+}
+
+#workHarder {
+    color: orange;
+}
+
 h3 {
     text-align: center;
 }

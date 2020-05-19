@@ -9,3 +9,8 @@
  .center {
     text-align: center;
  }
+
+ .error {
+    font: 25px Arial, sans-serif;
+    color: red;
+ }
