@@ -2,6 +2,10 @@
     color: purple;
 }
 
+.candidates li:hover {
+    cursor: pointer;
+}
+
 .data {
     color: brown;
 }
