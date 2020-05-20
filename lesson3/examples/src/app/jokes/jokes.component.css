@@ -1,0 +1,14 @@
+h3 {
+    text-decoration: underline;
+    color: darkred;
+}
+
+
+.clickMe {
+    text-align: center;
+}
+
+.start {
+    background-color: rgb(88, 184, 88);
+
+}

@@ -1,0 +1,7 @@
+<div class="buttons">
+    <h3>{{ jokesHeading }}</h3>
+    <button class="startNormal" [class.start]='!start' (mouseleave)='start=false' (mouseover)='start = true' [disabled]='start'>Start</button><hr>
+    <div  [class.clickMe]='clickMe'>
+        <button (mouseover)='clickMe=!clickMe'>Click Me!</button>
+    </div>
+</div>
