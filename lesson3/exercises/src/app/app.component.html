@@ -16,17 +16,18 @@
       </div>
 
       <div class="col-6">
-         <div class="shuttle-background" [style.backgroundColor]="color">
-            <img #rocketImage src="assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="0" [style.bottom]="0"/>         </div>
+         <div #background class="shuttle-background" [style.backgroundColor]="color">
+            <img #rocketImage src="assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="0" [style.bottom]="0"/>        
+         </div>
       </div>
 
       <div class="col-3">
          <div class="container-right"b>
             <div *ngIf='!takeOffEnabled'>
-               <button (click)="moveRocket(rocketImage, 'up')">Up</button>
-               <button (click)="moveRocket(rocketImage, 'down')">Down</button>
-               <button (click)="moveRocket(rocketImage, 'right')">Right</button>
-               <button (click)="moveRocket(rocketImage, 'left')">Left</button>
+               <button (click)="moveRocket(rocketImage, background, 'up')" [disabled]='!upEnabled'>Up</button>
+               <button (click)="moveRocket(rocketImage, background, 'down')" [disabled]='!downEnabled'>Down</button>
+               <button (click)="moveRocket(rocketImage, background, 'right')" [disabled]='!rightEnabled'>Right</button>
+               <button (click)="moveRocket(rocketImage, background, 'left')" [disabled]='!leftEnabled'>Left</button>
             </div>
            <h3>Space Shuttle Height</h3>
             <p>{{ height }} km</p>

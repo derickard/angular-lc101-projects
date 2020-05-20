@@ -13,6 +13,10 @@ export class AppComponent {
   width = 0;
   message = 'Space shuttle ready for takeoff!';
   takeOffEnabled= true;
+  leftEnabled = true;
+  rightEnabled = true;
+  downEnabled = true;
+  upEnabled = true;
 
   handleTakeOff() {
     let result = window.confirm('Are you sure the shuttle is ready for takeoff?');
@@ -49,7 +53,32 @@ export class AppComponent {
     }
   }
 
-  moveRocket(rocketImage: HTMLImageElement, direction: string) {
+  edgeCheck(background: HTMLDivElement, rocketImage: HTMLImageElement) {
+    let rocketHeight = parseInt(rocketImage.style.bottom);
+    let rocketWidth = parseInt(rocketImage.style.left);
+    
+    if((rocketWidth+75)>background.offsetWidth ) {
+      this.color='orange';
+      this.rightEnabled = false;
+    } else if (rocketWidth < 0 ) {
+      this.color='orange';
+      this.leftEnabled = false;
+    } else if (rocketHeight < 0) {
+      this.color='orange';
+      this.downEnabled = false;
+    } else if ((rocketHeight+75) > background.offsetHeight) {
+      this.color='orange';
+      this.upEnabled = false;
+    } else {
+      this.color='blue';
+      this.upEnabled = true;
+      this.downEnabled = true;
+      this.leftEnabled = true;
+      this.rightEnabled = true;
+    }
+  }
+  
+  moveRocket(rocketImage: HTMLImageElement, background: HTMLDivElement, direction: string) {
     if (direction === 'right') {
     let movement = parseInt(rocketImage.style.left) + 10 + 'px';
     rocketImage.style.left = movement;
@@ -65,6 +94,7 @@ export class AppComponent {
     if (direction === 'up') {
       let movement = parseInt(rocketImage.style.bottom) + 10 + 'px';
       rocketImage.style.bottom = movement;
+      console.log(movement);
       this.width = this.height + 10000;
     }
 
@@ -73,7 +103,7 @@ export class AppComponent {
       rocketImage.style.bottom = movement;
       this.width = this.height - 10000;
      }
-
+     this.edgeCheck(background,rocketImage);
  }
 
 }
