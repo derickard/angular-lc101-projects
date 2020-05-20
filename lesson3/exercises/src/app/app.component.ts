@@ -32,6 +32,7 @@ export class AppComponent {
     this.height = 0;
     this.width=0;
     rocketImage.style.bottom='0px';
+    rocketImage.style.left='0px';
     this.takeOffEnabled=true;
   }
 
@@ -43,6 +44,7 @@ export class AppComponent {
       this.height=0;
       this.width=0;
       rocketImage.style.bottom='0px';
+      rocketImage.style.left='0px';
       this.takeOffEnabled=true;
     }
   }
